@@ -8,7 +8,11 @@ class ConfTests(unittest.TestCase):
         cls.config = YakeiConfig()
 
     def test_listDomains(self):
-        self.config.GetDomains()
+        self.assertEqual(len(self.config.GetDomains()),2)
         
-    def test_listServices(self):
-        self.config.GetServices("abc")
+    def test_listServicesFailure(self):
+        with self.assertRaises(DomainNotFound):
+            self.config.GetServices("abc")
+            
+    def test_listServicesPass(self):
+        self.assertEqual(len(self.config.GetServices("git.vertinext.com")),1)

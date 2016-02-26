@@ -12,6 +12,12 @@ class ConfBadlyFormed(Exception):
         self.value = value
     def __str__(self):
         return repr(self.value)
+        
+class DomainNotFound(Exception):
+    def __init__(self, value):
+        self.value = "Didn't find Domain {0}.".format(value)
+    def __str__(self):
+        return repr(self.value)
 
 class YakeiConfig:
     def __init__(self):
@@ -62,7 +68,10 @@ class YakeiConfig:
                         self.currentServices[which] = value
 
     def GetDomains(self):
-        return 'List of Domains'
+        return self.data.keys()
 
     def GetServices(self, which):
-        return 'List of Services for a Domain'
+        for key in self.data.keys():
+            if key.lower() == which.lower():
+                return self.data[key].keys()
+        raise DomainNotFound(which)
