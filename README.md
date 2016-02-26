@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/ccubed/Yakei.svg?branch=master)](https://travis-ci.org/ccubed/Yakei)
 # Yakei
 Python service monitor.
 * Right now i'm being lazy and putting notes here. Will use Sphinx for final documentation.
