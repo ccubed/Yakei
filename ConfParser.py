@@ -26,7 +26,7 @@ class YakeiConfig:
         else:
             raise ConfMissingError()
 
-    def ReadConfig():
+    def ReadConfig(self):
         conf = open('Yakei.conf','r')
         for index, line in enumerate(conf.readlines()):
             if not line.startswith('*'):
@@ -61,8 +61,8 @@ class YakeiConfig:
                     else:
                         self.currentServices[which] = value
 
-    def GetDomains():
+    def GetDomains(self):
         return 'List of Domains'
 
-    def GetServices(which):
+    def GetServices(self, which):
         return 'List of Services for a Domain'
