@@ -9,6 +9,10 @@ Welcome to Yakei's documentation!
 Contents:
 
 .. toctree::
+   Installation
+   Configuration
+   Website
+   REST
    :maxdepth: 2
 
 
