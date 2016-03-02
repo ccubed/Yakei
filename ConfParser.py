@@ -63,7 +63,7 @@ class YakeiConfig:
                     if which not in ['type', 'index', 'poll', 'load', 'notification', 'endpoint', 'altlocation', 'datatype', 'expected', 'name']:
                         raise ConfBadlyFormed("Bad type. Got type {0} on line {1}".format(which, index))
                     elif not self.isDomain or not self.isService:
-                        raise ConfBadlyformed("Got a setting value outside a Domain or Service Directive. Line {0}.".format(index))
+                        raise ConfBadlyFormed("Got a setting value outside a Domain or Service Directive. Line {0}.".format(index))
                     else:
                         self.currentServices[which] = value
 
